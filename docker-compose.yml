@@ -1,0 +1,13 @@
+version: '3'
+services:
+    webserver:
+        image: gatsby:latest
+        environment:
+#        - GATSBY_ENV=develop
+        - GATSBY_ENV=stage
+        - GIT_REPO=https://github.com/gatsbyjs/gatsby-starter-hello-world
+        ports:
+        - 80:8000
+        volumes:
+        - ./site:/site
+        - /etc/letsencrypt/live/bradypacha.com:/etc/ssl/
